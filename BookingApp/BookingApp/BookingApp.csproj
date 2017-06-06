@@ -94,6 +94,10 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http.Cors, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.2\lib\net45\System.Web.Http.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
@@ -256,6 +260,18 @@
     <Compile Include="Migrations\201706040304228_Initial.Designer.cs">
       <DependentUpon>201706040304228_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706060817427_Data model update.cs" />
+    <Compile Include="Migrations\201706060817427_Data model update.Designer.cs">
+      <DependentUpon>201706060817427_Data model update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706060959263_Finall database migration.cs" />
+    <Compile Include="Migrations\201706060959263_Finall database migration.Designer.cs">
+      <DependentUpon>201706060959263_Finall database migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706061017054_This is not one finall migration.cs" />
+    <Compile Include="Migrations\201706061017054_This is not one finall migration.Designer.cs">
+      <DependentUpon>201706061017054_This is not one finall migration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -352,6 +368,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201706040304228_Initial.resx">
       <DependentUpon>201706040304228_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706060817427_Data model update.resx">
+      <DependentUpon>201706060817427_Data model update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706060959263_Finall database migration.resx">
+      <DependentUpon>201706060959263_Finall database migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706061017054_This is not one finall migration.resx">
+      <DependentUpon>201706061017054_This is not one finall migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
