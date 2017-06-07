@@ -10,7 +10,7 @@ namespace ModelClasses
         public int Id { get; set; }
         private int grade;
 		private string text;
-		public List<User> m_User;
+		public List<AppUser> m_User;
 		public List<Accommodation> m_Accommodation;
 
 		public Comment(){

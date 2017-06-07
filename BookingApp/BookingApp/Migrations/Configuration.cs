@@ -1,10 +1,9 @@
-using BookingApp.Models;
-
 namespace BookingApp.Migrations
 {
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using ModelClasses;
+    using Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -19,15 +18,22 @@ namespace BookingApp.Migrations
 
         protected override void Seed(BookingApp.Models.BAContext context)
         {
-            Accommodation accomm = new Accommodation();
-            accomm.Name = "Test accommodation";
+            //Accommodation accomm = new Accommodation();
+            //accomm.Name = "Test accommodation";
 
-            Room room = new Room();
-            room.BedCount = 10;
+            //Room room = new Room();
+            //room.BedCount = 10;
 
-            Comment com = new Comment();
-            com.Grade = 4;
-            
+            //Comment com = new Comment();
+            //com.Grade = 4;
+
+            AppUser auser = new AppUser();
+            auser.Email = "rosicnemanja94@gmail.com";
+            auser.FullName = "Nemanja Rosic";
+            //  auser.m_Accommodation.Add(accomm);
+
+            //context.accommodations.Add(accomm);
+            context.AppUsers.Add(auser);
 
             if (!context.Roles.Any(r => r.Name == "Admin"))
             {
@@ -56,12 +62,22 @@ namespace BookingApp.Migrations
                 manager.Create(role);
             }
 
+            context.AppUsers.AddOrUpdate(
+                  p => p.FullName,
+                  new AppUser() { FullName = "Admin Adminovic" }
+            );
+            context.AppUsers.AddOrUpdate(
+                p => p.FullName,
+                new AppUser() { FullName = "AppUser AppUserovic" }
+            );
+            context.SaveChanges();
+
             var userStore = new UserStore<BAIdentityUser>(context);
             var userManager = new UserManager<BAIdentityUser>(userStore);
 
             if (!context.Users.Any(u => u.UserName == "admin"))
             {
-                var user = new BAIdentityUser() { Id = "admin", UserName = "admin", Email = "admin@yahoo.com", PasswordHash = BAIdentityUser.HashPassword("admin")};
+                var user = new BAIdentityUser() { Id = "admin", UserName = "admin", Email = "admin@yahoo.com", PasswordHash = BAIdentityUser.HashPassword("admin") };
                 userManager.Create(user);
                 userManager.AddToRole(user.Id, "Admin");
             }

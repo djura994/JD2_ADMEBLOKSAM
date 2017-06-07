@@ -5,21 +5,22 @@ using System.IO;
 
 namespace ModelClasses
 {
-	public class User {
+	public class AppUser {
 
 		private string email;
-		private int id;
-		private string password;
+		public int Id { get; set; }
+        public string FullName { get; set; }
+        private string password;
 		private string username;
 		public List<Comment> m_Comment;
 		public List<RoomReservation> m_RoomReservations;
 		public List<Accommodation> m_Accommodation;
 
-		public User(){
+		public AppUser(){
 
 		}
 
-		~User(){
+		~AppUser(){
 
 		}
 
@@ -29,15 +30,6 @@ namespace ModelClasses
 			}
 			set{
 				email = value;
-			}
-		}
-
-		public int Id{
-			get{
-				return id;
-			}
-			set{
-				id = value;
 			}
 		}
 

@@ -11,7 +11,7 @@ namespace ModelClasses
         private string endDate;
 		private string startDate;
 		private DateTime timestamp;
-		public List<User> m_User;
+		public List<AppUser> m_User;
 		public List<Room> m_Room;
 
 		public RoomReservation(){
