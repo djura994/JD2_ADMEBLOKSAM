@@ -6,14 +6,14 @@ namespace BookingApp.Migrations
     using System.Data.Entity.Migrations.Infrastructure;
     using System.Resources;
     
-    [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Initial : IMigrationMetadata
+    [GeneratedCode("EntityFramework.Migrations", "6.2.0-beta1-60406")]
+    public sealed partial class InitialCreate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Initial));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
         
         string IMigrationMetadata.Id
         {
-            get { return "201706071012048_Initial"; }
+            get { return "201706120827025_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source

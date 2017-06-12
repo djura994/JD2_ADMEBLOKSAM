@@ -8,47 +8,56 @@ namespace ModelClasses
 	public class RoomReservation {
 
         public int Id { get; set; }
-        private string endDate;
-		private string startDate;
-		private DateTime timestamp;
-		public List<AppUser> m_User;
-		public List<Room> m_Room;
+        private Nullable<DateTime> endDate;
+        private Nullable<DateTime> startDate;
+        private Nullable<DateTime> timestamp;
 
-		public RoomReservation(){
+        public RoomReservation()
+        {
 
-		}
+        }
 
-		~RoomReservation(){
+        ~RoomReservation()
+        {
 
-		}
+        }
 
-		public string EndDate{
-			get{
-				return endDate;
-			}
-			set{
-				endDate = value;
-			}
-		}
+        public Nullable<DateTime> EndDate
+        {
+            get
+            {
+                return endDate;
+            }
+            set
+            {
+                endDate = value;
+            }
+        }
 
-		public string StartDate{
-			get{
-				return startDate;
-			}
-			set{
-				startDate = value;
-			}
-		}
+        public Nullable<DateTime> StartDate
+        {
+            get
+            {
+                return startDate;
+            }
+            set
+            {
+                startDate = value;
+            }
+        }
 
-		public DateTime Timestamp{
-			get{
-				return timestamp;
-			}
-			set{
-				timestamp = value;
-			}
-		}
+        public Nullable<DateTime> Timestamp
+        {
+            get
+            {
+                return timestamp;
+            }
+            set
+            {
+                timestamp = value;
+            }
+        }
 
-	}
+    }
 
 }

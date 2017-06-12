@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
+using System.ComponentModel.DataAnnotations;
 
 namespace ModelClasses
 {
@@ -9,6 +10,8 @@ namespace ModelClasses
 
 		private int id;
 		private string name;
+        [Required]
+        public Country country { get; set; }
 		public List<Place> m_Place;
 
 		public Region(){

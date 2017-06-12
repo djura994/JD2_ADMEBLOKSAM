@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
+using System.ComponentModel.DataAnnotations;
 
 namespace ModelClasses {
 	public class Accommodation {
@@ -15,6 +16,8 @@ namespace ModelClasses {
 		private double latitude;
 		private double longitude;
 		private string name;
+        [Required]
+        public Place place { get; set; }
 		public List<Comment> m_Comment;
 		public List<Room> m_Room;
 

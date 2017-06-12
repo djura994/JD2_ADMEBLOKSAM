@@ -12,6 +12,7 @@ namespace ModelClasses
 		private int id;
 		private int pricePerNight;
 		private int roomNumber;
+        public Accommodation accomodation { get; set; }
 		public List<RoomReservation> m_RoomReservations;
 
 		public Room(){
