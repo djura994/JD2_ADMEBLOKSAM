@@ -23,7 +23,7 @@ namespace BookingApp.Migrations
                         place_Id = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Places", t => t.place_Id, cascadeDelete: true)
+                .ForeignKey("dbo.Places", t => t.place_Id, cascadeDelete: false)
                 .Index(t => t.place_Id);
             
             CreateTable(
@@ -35,7 +35,7 @@ namespace BookingApp.Migrations
                         region_Id = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Regions", t => t.region_Id, cascadeDelete: true)
+                .ForeignKey("dbo.Regions", t => t.region_Id, cascadeDelete: false)
                 .Index(t => t.region_Id);
             
             CreateTable(
@@ -47,7 +47,7 @@ namespace BookingApp.Migrations
                         country_Id = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Countries", t => t.country_Id, cascadeDelete: true)
+                .ForeignKey("dbo.Countries", t => t.country_Id, cascadeDelete: false)
                 .Index(t => t.country_Id);
             
             CreateTable(
@@ -92,8 +92,8 @@ namespace BookingApp.Migrations
                         user_Id = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Accommodations", t => t.accomodation_Id, cascadeDelete: true)
-                .ForeignKey("dbo.AppUsers", t => t.user_Id, cascadeDelete: true)
+                .ForeignKey("dbo.Accommodations", t => t.accomodation_Id, cascadeDelete: false)
+                .ForeignKey("dbo.AppUsers", t => t.user_Id, cascadeDelete: false)
                 .Index(t => t.accomodation_Id)
                 .Index(t => t.user_Id);
             
@@ -115,8 +115,8 @@ namespace BookingApp.Migrations
                         RoleId = c.String(nullable: false, maxLength: 128),
                     })
                 .PrimaryKey(t => new { t.UserId, t.RoleId })
-                .ForeignKey("dbo.AspNetRoles", t => t.RoleId, cascadeDelete: true)
-                .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
+                .ForeignKey("dbo.AspNetRoles", t => t.RoleId, cascadeDelete: false)
+                .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: false)
                 .Index(t => t.UserId)
                 .Index(t => t.RoleId);
             
@@ -165,7 +165,7 @@ namespace BookingApp.Migrations
                         UserName = c.String(nullable: false, maxLength: 256),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.AppUsers", t => t.appUserId, cascadeDelete: true)
+                .ForeignKey("dbo.AppUsers", t => t.appUserId, cascadeDelete: false)
                 .Index(t => t.appUserId)
                 .Index(t => t.UserName, unique: true, name: "UserNameIndex");
             
@@ -179,7 +179,7 @@ namespace BookingApp.Migrations
                         ClaimValue = c.String(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
+                .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: false)
                 .Index(t => t.UserId);
             
             CreateTable(
@@ -191,7 +191,7 @@ namespace BookingApp.Migrations
                         UserId = c.String(nullable: false, maxLength: 128),
                     })
                 .PrimaryKey(t => new { t.LoginProvider, t.ProviderKey, t.UserId })
-                .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
+                .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: false)
                 .Index(t => t.UserId);
             
         }
