@@ -117,6 +117,5 @@ namespace BookingApp.Controllers
             {
                 return db.AppUsers.Count(e => e.Id == id) > 0;
             }
-        }
-    
+        }   
 }

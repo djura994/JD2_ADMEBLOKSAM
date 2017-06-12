@@ -67,7 +67,7 @@ namespace BookingApp.Controllers
                 }
             }
 
-            return StatusCode(HttpStatusCode.NoContent);
+            return CreatedAtRoute("DefaultApi", new { id = comment.Id }, comment);
         }
 
         // POST: api/Comments
