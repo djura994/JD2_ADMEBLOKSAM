@@ -1,12 +1,11 @@
 
-import { Accommondation } from '../models/accomodation.model';
-
+import { Accomodation } from '../models/accomodation.model';
 
 export class AccomodationType {
   constructor(
     public Id: number,
     public Name: string,
-    public m_Accomodation: Array<Accommondation>
+    public m_Accomodation: Array<Accomodation>
    ) {
   }
 }

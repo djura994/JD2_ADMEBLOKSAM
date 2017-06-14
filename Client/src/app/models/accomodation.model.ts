@@ -3,8 +3,19 @@ import { Room } from '../models/room.model';
 import { Comment } from '../models/comment.model';
 import { Place } from '../models/place.model';
 import { User } from '../models/user.model';
+import {Component, OnInit} from '@angular/core'
+import {Router} from '@angular/router'
 
-export class Accommondation {
+import {AccomodationService} from '../accomodation.service'
+@Component({
+     selector: 'app',
+     templateUrl: './app.component.html',
+     styleUrls: ['./app.component.css'],
+    providers: [AccomodationService]
+})
+
+export class Accomodation implements OnInit {
+    accomodations: Accomodation[];
 
     public Id: number;
     public Name: string;
@@ -21,4 +32,18 @@ export class Accommondation {
     public m_Comment: Array<Comment>;
     public m_Room: Array<Room>;
     public Place: Place
+
+    constructor(private accomodationService: AccomodationService, private router: Router) {
+
+    }
+
+    getAccomodations(): void {
+        this.accomodationService.getAccomodations().then(accomodations =>
+        this.accomodations = accomodations);
+    }
+
+    ngOnInit(): void {
+     this.getAccomodations()
+   }
+
 }

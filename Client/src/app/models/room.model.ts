@@ -1,6 +1,6 @@
 
 import { RoomReservation } from '../models/roomReservation.model';
-import { Accommondation } from '../models/accomodation.model';
+import { Accomodation } from '../models/accomodation.model';
 
 
 export class Room {
@@ -11,7 +11,7 @@ export class Room {
     public Description: string,
     public BedCount: number,
     public PricePerNight:number,
-    public Accomodation: Accommondation,
+    public Accomodation: Accomodation,
     public m_RoomReservations: Array<RoomReservation>
     
    ) {
