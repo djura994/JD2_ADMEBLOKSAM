@@ -1,6 +1,6 @@
 
 import { Region } from '../models/region.model';
-import { Accommondation } from '../models/accomodation.model';
+import { Accomodation } from '../models/accomodation.model';
 
 
 export class Place {
@@ -9,7 +9,7 @@ export class Place {
     public Name: string,
 
     public Region: Region,
-    public m_Accomodations: Array<Accommondation>
+    public m_Accomodations: Array<Accomodation>
    ) {
   }
 }

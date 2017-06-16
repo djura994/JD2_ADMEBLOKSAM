@@ -3,6 +3,7 @@ import { Headers, Http } from '@angular/http';
 import { RequestOptions } from '@angular/http';
 import { Login } from '../models/logIn.model';
 import { User } from '../models/user.model';
+import {UserService  } from '../services/userService';
  
 import 'rxjs/add/operator/toPromise';
 
@@ -12,6 +13,7 @@ export class LogInService {
   private header = new Headers({'Content-Type': 'application/json'});
 
   private loginUrl = 'http://localhost:54042/oauth/token';
+  private usersUrl = 'http://localhost:54042/api/Appusers/'
 
   constructor(private http: Http) { }
 
@@ -35,6 +37,15 @@ export class LogInService {
           })
           .catch(this.handleError);
   }
+  getUser(username : string, token: String): Promise<User> {
+    return this.http.get(this.usersUrl+"?$filter=username eq "+username)
+      .toPromise()
+      .then(response => {
+        debugger
+          localStorage.setItem("email", response.json()[0].Email);
+          return response.json() as User;})
+      .catch(this.handleError);
+}
 
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error);
