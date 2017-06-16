@@ -8,6 +8,7 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class UserService {
     private usersUrl = 'http://localhost:54042/api/Appusers/'
+    private managersUrl = 'http://localhost:54042/api/managers'
 
     constructor(private http: Http) { }
 
@@ -28,6 +29,34 @@ getUser(username : string, token: String): Promise<User> {
           debugger
           return response.json() as User[]; })
       .catch(this.handleError);
+  }
+
+  getManagers(): Promise<User[]> { 
+    return this.http.get(this.managersUrl)
+      .toPromise()
+      .then(response => {
+        
+          let managers:Array<User>;
+
+            
+          debugger
+          return response.json() as User[]; })
+      .catch(this.handleError);
+  }
+
+  putUser(user: User): Promise<User> {
+       const headers = new Headers({
+      'Content-Type': 'application/json'
+    });
+
+    let url = `${this.usersUrl}/${user.Id}`;
+    return this.http
+      .put(url, JSON.stringify(user), { headers: headers })
+      .toPromise()
+      .then(res => { debugger 
+        return res.json() as User;})
+      .catch(this.handleError);
+    
   }
 
   private handleError(error: any): Promise<any> {
