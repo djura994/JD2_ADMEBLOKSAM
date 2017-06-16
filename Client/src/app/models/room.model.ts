@@ -2,7 +2,6 @@
 import { RoomReservation } from '../models/roomReservation.model';
 import { Accomodation } from '../models/accomodation.model';
 
-
 export class Room {
   constructor(
 

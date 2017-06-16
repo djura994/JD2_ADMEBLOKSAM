@@ -3,7 +3,7 @@ import { Headers, Http } from '@angular/http';
 import { RequestOptions } from '@angular/http';
 import { Login } from '../models/logIn.model';
 import { User } from '../models/user.model';
-import {UserService  } from '../services/userService';
+import { UserService  } from '../services/userService';
  
 import 'rxjs/add/operator/toPromise';
 

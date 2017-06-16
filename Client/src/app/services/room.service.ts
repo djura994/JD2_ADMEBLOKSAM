@@ -10,23 +10,9 @@ export class UserService {
   private headers = new Headers({'Content-Type': 'application/json'});
  
   private roomsUrl = 'http://localhost:54042/api/rooms/'
-  private roomReservationsUrl = 'http://localhost:54042/api/roomReservations/'
-
 
   constructor(private http: Http) { }
 
-  wasRoomReserved(roomId :number, username :string) : Promise<boolean> {
-    return this.http.get(this.roomReservationsUrl+"?$filter=Room_id eq "+roomId+"$User_id eq "+username)
-          .toPromise()
-          .then(response => {
-              if (response.json().size() === 0)
-                return false;
-              
-              return true;
-            })
-          .catch(this.handleError);
-          
-  }
    getRooms(): Promise<Room[]> { 
     return this.http.get(this.roomsUrl+"?$expand=accomodation/owner,accomodation/place/region/country")
       .toPromise()
