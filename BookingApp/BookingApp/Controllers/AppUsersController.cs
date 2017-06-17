@@ -18,24 +18,29 @@ namespace BookingApp.Controllers
         {
             private BAContext db = new BAContext();
 
-            [Authorize(Roles = "Admin")]//Proveravamo da li je role Admin.
+
                                         // GET: api/AppUsers
-            public IQueryable<AppUser> GetAppUsers()
+            [ResponseType(typeof(AppUser))]
+            public IHttpActionResult GetAppUsers()
             {
-                return db.AppUsers;
+                return Ok(db.AppUsers);
             }
 
             // GET: api/AppUsers/5
             [ResponseType(typeof(AppUser))]
-            public IHttpActionResult GetAppUser(int id)
+            public IHttpActionResult GetAppUser(string username)
             {
-                AppUser appUser = db.AppUsers.Find(id);
-                if (appUser == null)
+                  var appUsers = db.AppUsers;
+                foreach(AppUser au in appUsers)
+            {
+                if(au.Username == username)
                 {
-                    return NotFound();
+                    return Ok(au);
                 }
-
-                return Ok(appUser);
+            }
+                
+                    return NotFound();
+                
             }
 
             // PUT: api/AppUsers/5

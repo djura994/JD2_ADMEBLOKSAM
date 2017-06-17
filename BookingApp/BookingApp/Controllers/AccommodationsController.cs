@@ -97,6 +97,26 @@ namespace BookingApp.Controllers
                 return NotFound();
             }
 
+            var rooms = db.rooms;
+
+            foreach(Room r in rooms)
+            {
+                if (r.accomodation == accommodation)
+                {
+                    db.rooms.Remove(r);
+                }
+            }
+
+            var comments = db.comments;
+
+            foreach (Comment c in comments)
+            {
+                if (c.accomodation == accommodation)
+                {
+                    db.comments.Remove(c);
+                }
+            }
+
             db.accommodations.Remove(accommodation);
             db.SaveChanges();
 
