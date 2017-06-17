@@ -3,6 +3,7 @@ import { Headers, Http } from '@angular/http';
 import { RequestOptions } from '@angular/http';
 import { User } from '../models/user.model';
 import { Accomodation } from '../models/accomodation.model';
+import { Comment } from '../models/comment.model';
 
 import 'rxjs/add/operator/toPromise';
 
