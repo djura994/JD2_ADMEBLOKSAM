@@ -12,7 +12,7 @@ namespace ModelClasses
 		private string name;
         [Required]
         public Country country { get; set; }
-		public List<Place> m_Place;
+		
 
 		public Region(){
 

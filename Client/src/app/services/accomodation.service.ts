@@ -6,7 +6,7 @@ import { Accomodation } from '../models/accomodation.model';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
-export class UserService {
+export class AccomodationService {
     private accomodationUrl = 'http://localhost:54042/api/accommodations';
 
     constructor(private http: Http) { }

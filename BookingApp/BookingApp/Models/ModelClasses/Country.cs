@@ -10,7 +10,6 @@ namespace ModelClasses
 		private int code;
 		private int id;
 		private string name;
-		public List<Region> m_Region;
 
 		public Country(){
 

@@ -12,9 +12,6 @@ namespace ModelClasses
         public string FullName { get; set; }
         private string password;
 		private string username;
-		public List<Comment> m_Comment;
-		public List<RoomReservation> m_RoomReservations;
-		public List<Accommodation> m_Accommodation;
 
 		public AppUser(){
 

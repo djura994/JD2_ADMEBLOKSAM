@@ -12,7 +12,6 @@ namespace ModelClasses
 		private string name;
         [Required]
         public Region region { get; set; }
-		public List<Accommodation> m_Accommodation;
 
 		public Place(){
 

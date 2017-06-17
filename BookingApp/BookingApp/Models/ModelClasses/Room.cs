@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
+using System.ComponentModel.DataAnnotations;
 
 namespace ModelClasses
 {
@@ -12,8 +13,9 @@ namespace ModelClasses
 		private int id;
 		private int pricePerNight;
 		private int roomNumber;
+        [Required]
         public Accommodation accomodation { get; set; }
-		public List<RoomReservation> m_RoomReservations;
+		
 
 		public Room(){
 

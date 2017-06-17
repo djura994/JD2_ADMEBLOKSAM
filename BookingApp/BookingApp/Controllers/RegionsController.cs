@@ -95,6 +95,7 @@ namespace BookingApp.Controllers
             {
                 return NotFound();
             }
+            
 
             db.regions.Remove(region);
             db.SaveChanges();

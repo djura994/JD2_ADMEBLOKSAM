@@ -6,7 +6,7 @@ import { AccomodationType } from '../models/accomodationtype.model'
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
-export class UserService {
+export class AccomodationTypeService {
   private headers = new Headers({'Content-Type': 'application/json'});
   
   private typesUrl = 'http://localhost:54042/api/AccommodationTypes/'
@@ -20,6 +20,50 @@ getTypes(): Promise<AccomodationType[]> {
       .then(response => {
           return response.json() as AccomodationType[]; })
       .catch(this.handleError);
+  }
+
+  postAccomodationType(accomodationType: AccomodationType): Promise<AccomodationType> {
+
+       const headers = new Headers({
+      'Content-Type': 'application/json'
+    });
+
+    return this.http
+      .post(this.typesUrl, JSON.stringify(accomodationType), { headers: headers })
+      .toPromise()
+      .then(res => res.json() as AccomodationType)
+      .catch(this.handleError);
+    
+  }
+
+  putAccomodationType(accomodationType: AccomodationType): Promise<AccomodationType> {
+       const headers = new Headers({
+      'Content-Type': 'application/json'
+    });
+
+    let url = `${this.typesUrl}/${accomodationType.Id}`;
+    return this.http
+      .put(url, JSON.stringify(accomodationType), { headers: headers })
+      .toPromise()
+      .then(res => { debugger 
+        return res.json() as AccomodationType;})
+      .catch(this.handleError);
+    
+  }
+
+   deleteAccomodationType(accomodationType: AccomodationType): Promise<AccomodationType> {
+    const headers = new Headers({
+      'Content-Type': 'application/json'
+    });
+
+    let url = `${this.typesUrl}/${accomodationType.Id}`;
+    return this.http
+      .delete(url, { headers: headers })
+      .toPromise()
+      .then(res => { debugger 
+        return res.json() as AccomodationType;})
+      .catch(this.handleError);
+    
   }
 
   private handleError(error: any): Promise<any> {

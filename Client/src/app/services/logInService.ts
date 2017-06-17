@@ -31,14 +31,13 @@ export class LogInService {
           .then(data => {
             debugger
              localStorage.setItem("token", data.json().access_token);
-             localStorage.setItem("role", data.headers.get("role"));
              localStorage.setItem("username", login.username);
-             return this.getUser(login.username, data.json().access_token)    
+             return this.getUser(login.username , data.json().access_token)    
           })
           .catch(this.handleError);
   }
   getUser(username : string, token: String): Promise<User> {
-    return this.http.get(this.usersUrl+"?$filter=username eq "+username)
+    return this.http.get(this.usersUrl+"?$filter=id eq "+username)
       .toPromise()
       .then(response => {
         debugger

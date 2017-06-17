@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
+using System.ComponentModel.DataAnnotations;
 
 namespace ModelClasses
 {
@@ -11,7 +12,10 @@ namespace ModelClasses
         private Nullable<DateTime> endDate;
         private Nullable<DateTime> startDate;
         private Nullable<DateTime> timestamp;
-
+        [Required]
+        public Room room { get; set; }
+        [Required]
+        public AppUser user { get; set; }
         public RoomReservation()
         {
 

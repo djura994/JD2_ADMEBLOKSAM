@@ -6,7 +6,7 @@ import { Room } from '../models/room.model'
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
-export class UserService {
+export class RoomsService {
   private headers = new Headers({'Content-Type': 'application/json'});
  
   private roomsUrl = 'http://localhost:54042/api/rooms/'

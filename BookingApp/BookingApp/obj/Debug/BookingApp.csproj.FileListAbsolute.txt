@@ -196,7 +196,7 @@ C:\Users\student\Desktop\JD2_ADMEBLOKSAM\BookingApp\BookingApp\bin\Microsoft.Owi
 C:\Users\student\Desktop\JD2_ADMEBLOKSAM\BookingApp\BookingApp\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\student\Desktop\JD2_ADMEBLOKSAM\BookingApp\BookingApp\bin\System.Web.Http.Owin.xml
 C:\Users\student\Desktop\JD2_ADMEBLOKSAM\BookingApp\BookingApp\obj\Debug\BookingApp.csprojResolveAssemblyReference.cache
-C:\Users\student\Desktop\JD2_ADMEBLOKSAM\BookingApp\BookingApp\obj\Debug\BookingApp.Migrations.InitialCreate.resources
-C:\Users\student\Desktop\JD2_ADMEBLOKSAM\BookingApp\BookingApp\obj\Debug\BookingApp.csproj.GenerateResource.Cache
 C:\Users\student\Desktop\JD2_ADMEBLOKSAM\BookingApp\BookingApp\obj\Debug\BookingApp.dll
 C:\Users\student\Desktop\JD2_ADMEBLOKSAM\BookingApp\BookingApp\obj\Debug\BookingApp.pdb
+C:\Users\student\Desktop\JD2_ADMEBLOKSAM\BookingApp\BookingApp\obj\Debug\BookingApp.Migrations.Initial.resources
+C:\Users\student\Desktop\JD2_ADMEBLOKSAM\BookingApp\BookingApp\obj\Debug\BookingApp.csproj.GenerateResource.Cache

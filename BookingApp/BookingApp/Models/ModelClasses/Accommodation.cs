@@ -18,8 +18,9 @@ namespace ModelClasses {
 		private string name;
         [Required]
         public Place place { get; set; }
-		public List<Comment> m_Comment;
-		public List<Room> m_Room;
+        [Required]
+        public AppUser owner { get; set; }
+		
 
 		public Accommodation(){
 

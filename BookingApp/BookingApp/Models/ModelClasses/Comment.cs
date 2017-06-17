@@ -15,8 +15,6 @@ namespace ModelClasses
         public Accommodation accomodation { get; set; }
         [Required]
         public AppUser user { get; set; }
-		public List<AppUser> m_User;
-		public List<Accommodation> m_Accommodation;
 
 		public Comment(){
 
