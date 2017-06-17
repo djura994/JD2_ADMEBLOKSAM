@@ -11,7 +11,6 @@ export class Room {
     public BedCount: number,
     public PricePerNight:number,
     public Accomodation: Accomodation,
-    public m_RoomReservations: Array<RoomReservation>
     
    ) {
   }

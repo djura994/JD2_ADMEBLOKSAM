@@ -22,6 +22,7 @@ namespace BookingApp.Migrations
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
+
             Country c1 = new Country();
             c1.Code = 123;
             c1.Name = "Srbija";
@@ -34,12 +35,15 @@ namespace BookingApp.Migrations
             p1.Name = "Glusci, Glusacka crkva";
             p1.region = r1;
 
+            AccommodationType type = new AccommodationType();
+            type.Name = "Tipa HAD :D";
 
             Accommodation a1 = new Accommodation();
             a1.Name = "Crkveno dvoriste";
             a1.Description = "Ladovina Bog da te vidi";
             a1.Address = "Na kraj sela, s leva!";
             a1.AverageGrade = 0;
+            a1.accomodationType = type;
             a1.Latitude = 45.242217;
             a1.Longitude = 19.855329;
             a1.ImageURL = "https://upload.wikimedia.org/wikipedia/commons/0/03/Glu%C5%A1ci_003.jpg";
@@ -77,8 +81,7 @@ namespace BookingApp.Migrations
             cmm.user = user;
             cmm.accomodation = a1;
 
-            AccommodationType type = new AccommodationType();
-            type.Name = "Tipa HAD :D";
+
 
             try
             {
@@ -109,5 +112,5 @@ namespace BookingApp.Migrations
             }
         }
     }
-}
+    }
 

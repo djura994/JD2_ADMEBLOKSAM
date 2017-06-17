@@ -6,7 +6,6 @@ export class Country {
     public Code: number,
     public Id: number,
     public Name: string,
-    public m_Region: Array<Region>
    ) {
   }
 }

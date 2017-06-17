@@ -33,6 +33,37 @@ export class RoomsService {
       .catch(this.handleError);
     
   }
+
+  putRoom(room: Room): Promise<Room> {
+       const headers = new Headers({
+      'Content-Type': 'application/json'
+    });
+
+    let url = `${this.roomsUrl}/${room.Id}`;
+    return this.http
+      .put(url, JSON.stringify(room), { headers: headers })
+      .toPromise()
+      .then(res => { debugger 
+        return res.json() as Room;})
+      .catch(this.handleError);
+    
+  }
+
+  deleteRoom(room: Room): Promise<Room> {
+    const headers = new Headers({
+      'Content-Type': 'application/json'
+    });
+
+    let url = `${this.roomsUrl}/${room.Id}`;
+    return this.http
+      .delete(url, { headers: headers })
+      .toPromise()
+      .then(res => { debugger 
+        return res.json() as Room;})
+      .catch(this.handleError);
+    
+  }
+
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error);
     return Promise.reject(error.message || error);

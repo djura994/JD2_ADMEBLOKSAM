@@ -9,11 +9,8 @@ export class User {
     public Id: number,
     public Username: string,
     public Email: string,
-    public Password: string,
-    public m_Comment: Array<Comment>,
-    public m_RoomReservations: Array<Comment>,
-    public m_Accomondation: Array<Accomodation>
-
+    public Fullname: string,
+    public Password: string
    ) {
   }
 }

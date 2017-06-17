@@ -8,12 +8,12 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.OData.Routing;
+using System.Web.Http.OData;
 using System.Web.Http.Description;
 
 namespace BookingApp.Controllers
 {
-   
-
         public class AppUsersController : ApiController
         {
             private BAContext db = new BAContext();
@@ -21,9 +21,10 @@ namespace BookingApp.Controllers
 
                                         // GET: api/AppUsers
             [ResponseType(typeof(AppUser))]
-            public IHttpActionResult GetAppUsers()
+            [EnableQuery]
+            public IQueryable<AppUser> GetAppUsers()
             {
-                return Ok(db.AppUsers);
+                  return db.AppUsers;
             }
 
             // GET: api/AppUsers/5

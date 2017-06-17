@@ -8,7 +8,6 @@ export class Place {
     public Name: string,
 
     public Region: Region,
-    public m_Accomodations: Array<Accomodation>
    ) {
   }
 }

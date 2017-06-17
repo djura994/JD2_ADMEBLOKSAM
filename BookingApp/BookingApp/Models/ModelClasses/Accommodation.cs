@@ -20,7 +20,8 @@ namespace ModelClasses {
         public Place place { get; set; }
         [Required]
         public AppUser owner { get; set; }
-		
+        [Required]
+		public AccommodationType accomodationType { get; set; }
 
 		public Accommodation(){
 

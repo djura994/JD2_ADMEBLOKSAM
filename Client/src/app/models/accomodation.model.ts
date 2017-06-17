@@ -5,6 +5,7 @@ import { Place } from '../models/place.model';
 import { User } from '../models/user.model';
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+import { AccomodationType } from '../models/accomodationType.model';
 
 export class Accomodation {
 
@@ -19,9 +20,8 @@ export class Accomodation {
     public Approved: boolean = false;
     public Owner: User;
     public Place_Id: number;
-    public Accomodation_Type: number;
-    public m_Comment: Array<Comment>;
-    public m_Room: Array<Room>;
+    public Accomodation_Type: AccomodationType;
+    
     public Place: Place
 
     constructor( private router: Router) {
