@@ -7,7 +7,7 @@
     }
 
     logIn(): void {
-        localStorage.setItem("token","sessionToken");
+        
     }
 
     logOut(): void {

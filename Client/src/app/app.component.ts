@@ -35,4 +35,8 @@ export class AppComponent {
         ("User not found!")
       })
   }
+  
+  goToAccomodations() {
+    this.router.navigate(['/accomodations']);
+  }
 }

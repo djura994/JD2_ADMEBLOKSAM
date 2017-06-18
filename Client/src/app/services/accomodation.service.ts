@@ -12,9 +12,12 @@ export class AccomodationService {
     constructor(private http: Http) { }
 
  getAccommondations(): Promise<Accomodation[]> {
-    return this.http.get(this.accomodationUrl+"?$expand=owner,place/region/country")
+   let head = new Headers({'Content-Type': 'application/json'});
+    head.append("Authorization","Bearer " + localStorage.getItem("token"));
+    return this.http.get(this.accomodationUrl, { headers : head})
       .toPromise()
       .then(response => {
+        
           return response.json() as Accomodation[]; })
       .catch(this.handleError);
   }

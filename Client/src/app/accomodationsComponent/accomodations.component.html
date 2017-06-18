@@ -1,0 +1,19 @@
+<h2>Available accommondations</h2>
+ <table class="Accomodation" style="height: 21px;" width="427" border="1">
+  <tbody>
+  <tr *ngFor="let accomodation of accomodations">
+   
+
+
+  <td style="text-align:center;">{{accomodation.Name}}</td>
+  <!-- Name -->
+  <td style="text-align:center;">{{accomodation.Address}}</td>
+ 
+  <td style="text-align:center;">{{accomodation.Id}}</td>
+  <td style="text-align:center;">{{accomodation.Description}}</td>
+  <td style="text-align:center;">{{accomodation.Latitude}}</td>
+  <td style="text-align:center;">{{accomodation.Longitude}}</td>
+  
+<!-- Approve  --></tr>
+</tbody>
+</table>

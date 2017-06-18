@@ -9,6 +9,7 @@ import { AuthService } from './services/authenticationService'
 import { UserService } from './services/userService';
 import { LoggedInGuard } from './loggedInGuard'
 import { LogInService } from './services/logInService'
+import { AccomodationService } from './services/accomodation.service';
 
 const Routes = [
   { path: 'accomodations', component: AccomodationComponent }
@@ -27,7 +28,7 @@ const Routes = [
     RouterModule.forRoot(Routes)
   ],
 
-  providers: [AuthService, LoggedInGuard, UserService, LogInService],//!LoggedInGuard also has to be included in providers!
+  providers: [AuthService, LoggedInGuard, UserService, LogInService, AccomodationService],//!LoggedInGuard also has to be included in providers!
   bootstrap: [AppComponent]
 })
 

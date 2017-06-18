@@ -1,4 +1,5 @@
 <!--The whole content below can be removed with the new code.-->
+<body>
 <div class="login-page">
   <div class="form">
     
@@ -6,7 +7,15 @@
       <input type="text" placeholder="username" name="username" [(ngModel)]="uname"/>
       <input type="password" placeholder="password" name="password" [(ngModel)]="pass"/>
       <input title="login" type="submit" />
+      <a [routerLink] = "['/accomodations']">Accomodations </a>
+
       
     </form>
+     
   </div>
+  
 </div>
+
+</body>
+
+<router-outlet></router-outlet>

@@ -30,6 +30,8 @@ export class LogInService {
           options)
           .toPromise()
           .then(data => {       
+            console.log(data.json().access_token);
+            
              localStorage.setItem("token", data.json().access_token);
              localStorage.setItem("username", login.username);
              return this.getUser(login.username , data.json().access_token)    
@@ -40,7 +42,6 @@ export class LogInService {
     return this.http.get(this.usersUrl+"?$filter=Username eq "+"'"+username+"'")
       .toPromise()
       .then(response => {
-        debugger
           localStorage.setItem("email", response.json()[0].Email);
           return response.json() as User;})
       .catch(this.handleError);
