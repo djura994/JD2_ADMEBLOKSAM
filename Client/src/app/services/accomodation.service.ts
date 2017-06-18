@@ -27,7 +27,6 @@ export class AccomodationService {
        const headers = new Headers({
       'Content-Type': 'application/json'
     });
-
     return this.http
       .post(this.accomodationUrl, JSON.stringify(accomodation), { headers: headers })
       .toPromise()

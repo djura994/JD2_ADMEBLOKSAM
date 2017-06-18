@@ -16,11 +16,8 @@ namespace ModelClasses {
 		private double latitude;
 		private double longitude;
 		private string name;
-        [Required]
         public Place place { get; set; }
-        [Required]
         public AppUser owner { get; set; }
-        [Required]
 		public AccommodationType accomodationType { get; set; }
 
 		public Accommodation(){

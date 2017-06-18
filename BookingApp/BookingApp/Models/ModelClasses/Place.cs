@@ -10,7 +10,6 @@ namespace ModelClasses
 
 		private int id;
 		private string name;
-        [Required]
         public Region region { get; set; }
 
 		public Place(){

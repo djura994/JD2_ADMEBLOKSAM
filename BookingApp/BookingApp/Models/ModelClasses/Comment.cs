@@ -11,9 +11,9 @@ namespace ModelClasses
         public int Id { get; set; }
         private int grade;
 		private string text;
-        [Required]
+      
         public Accommodation accomodation { get; set; }
-        [Required]
+        
         public AppUser user { get; set; }
 
 		public Comment(){

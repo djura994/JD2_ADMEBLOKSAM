@@ -78,6 +78,9 @@ namespace BookingApp.Controllers
             {
                 return BadRequest(ModelState);
             }
+            db.rooms.Attach(roomReservations.room);
+            db.accommodations.Attach(roomReservations.room.accomodation);
+            db.AppUsers.Attach(roomReservations.user);
 
             db.roomReservations.Add(roomReservations);
             db.SaveChanges();
@@ -94,6 +97,7 @@ namespace BookingApp.Controllers
             {
                 return NotFound();
             }
+           
 
             db.roomReservations.Remove(roomReservations);
             db.SaveChanges();

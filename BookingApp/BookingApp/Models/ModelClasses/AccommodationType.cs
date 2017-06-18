@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
+using Newtonsoft.Json;
 
 namespace ModelClasses
 {
@@ -9,6 +10,7 @@ namespace ModelClasses
 
 		private int id;
 		private string name;
+        [JsonIgnore]
 		public List<Accommodation> m_Accommodation;
 
 		public AccommodationType(){

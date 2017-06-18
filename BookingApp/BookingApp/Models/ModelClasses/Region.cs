@@ -10,7 +10,6 @@ namespace ModelClasses
 
 		private int id;
 		private string name;
-        [Required]
         public Country country { get; set; }
 		
 

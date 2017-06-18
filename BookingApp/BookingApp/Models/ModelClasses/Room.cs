@@ -13,7 +13,7 @@ namespace ModelClasses
 		private int id;
 		private int pricePerNight;
 		private int roomNumber;
-        [Required]
+        
         public Accommodation accomodation { get; set; }
 		
 

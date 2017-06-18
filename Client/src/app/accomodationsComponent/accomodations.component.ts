@@ -58,18 +58,19 @@ export class AccomodationComponent implements OnInit {
       this.userService.getUsers().then((users)=> {
 
         this.users=users;
+    
       })
   }
     
-  
-  
     AddAccomodation(acc: Accomodation, form: NgForm) {
-
-    var placeElement = Number.parseInt((<HTMLInputElement>document.getElementById("placeDropDown")).value);
+    var placeElement = Number.parseInt((<HTMLInputElement>document.getElementById("PlaceId")).value);
     acc.Place = this.places[placeElement - 1];
-
-    var ownerElement = Number.parseInt((<HTMLInputElement>document.getElementById("ownerDropDown")).value);
-    acc.Owner = this.users[ownerElement - 1];
+    console.log(acc.Place.Region);
+    
+    var accomodationTypeNum = Number.parseInt((<HTMLInputElement>document.getElementById("AccommodationTypeId")).value);
+    acc.Accomodation_Type = this.types[accomodationTypeNum - 1];
+   
+    acc.Owner = this.users[0];
 
     this.accomodationService.postAccomodation(acc).then(accomondation => {
       acc = accomondation; 
@@ -77,5 +78,22 @@ export class AccomodationComponent implements OnInit {
       })
         .catch(error => this.error = error);
   }
+
+  editAccomodation( acc: Accomodation, form: NgForm ) {
+     var placeElement = Number.parseInt((<HTMLInputElement>document.getElementById("PlaceId")).value);   
+     acc.Place = this.places[placeElement - 1];
+     console.log(acc.Place.Region);
+    
+     var accomodationTypeNum = Number.parseInt((<HTMLInputElement>document.getElementById("AccommodationTypeId")).value);
+     acc.Accomodation_Type = this.types[accomodationTypeNum - 1];
+   
+     acc.Owner = this.users[0];
+
+     this.accomodationService.putAccomodation(acc).then(accomondation => {
+       acc = accomondation; 
+      alert("Accomodation sucessfuly changed.");
+       })
+        .catch(error => this.error = error);
+ }
 }
 

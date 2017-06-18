@@ -74,7 +74,7 @@ namespace BookingApp.Controllers
             {
                 return BadRequest(ModelState);
             }
-
+            db.regions.Attach(place.region);
             db.places.Add(place);
             db.SaveChanges();
 
@@ -89,7 +89,7 @@ namespace BookingApp.Controllers
             {
                 return NotFound();
             }
-
+            
             db.places.Remove(place);
             db.SaveChanges();
 

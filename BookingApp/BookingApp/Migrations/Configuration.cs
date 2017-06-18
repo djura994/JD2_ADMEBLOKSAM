@@ -22,6 +22,7 @@ namespace BookingApp.Migrations
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
+
             Country c1 = new Country();
             c1.Code = 123;
             c1.Name = "Srbija";
@@ -80,8 +81,6 @@ namespace BookingApp.Migrations
             cmm.user = user;
             cmm.accomodation = a1;
 
-
-
             try
             {
                 context.roomReservations.Add(rr);
@@ -111,5 +110,4 @@ namespace BookingApp.Migrations
             }
         }
     }
-    }
-
+}
