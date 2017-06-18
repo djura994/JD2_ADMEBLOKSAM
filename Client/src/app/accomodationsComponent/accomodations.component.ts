@@ -2,6 +2,15 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Accomodation } from '../models/accomodation.model';
 import { AccomodationService } from '../services/accomodation.service';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
+import { Room } from '../models/room.model';
+import { Place } from '../models/place.model';
+import { AccomodationType } from '../models/accomodationType.model';
+import { User } from '../models/user.model';
+import { RoomsService } from '../services/room.service';
+import { PlaceService } from '../services/place.service';
+import { AccomodationTypeService } from '../services/accomodationType.service';
+import { UserService } from '../services/userService';
 
 @Component({
   selector: 'accomodations',
@@ -11,15 +20,62 @@ import { Router } from '@angular/router';
 
 export class AccomodationComponent implements OnInit {
 
-  @Input() accomodations: Accomodation[]
+  @Input() accomodations: Accomodation[];
+  @Input()  rooms: Room[] = [];
+  @Input()  places: Place[] = [];
+  @Input()  types: AccomodationType[] = [];
+  @Input()  users: User[] = [];
 
+  constructor(private router: Router, private accomodationService: AccomodationService, private roomService : RoomsService,
+  private placeService : PlaceService , private accomodationTypeService : AccomodationTypeService, private userService : UserService
+  
+  ) { }
 
-  constructor(private router: Router, private accomodationService: AccomodationService) { }
+    
+    error: any
 
   ngOnInit() {
       this.accomodationService.getAccommondations().then((accomodations) => {
           this.accomodations = accomodations;
+        })
+      
+    this.roomService.getRooms().then((rooms)=> {
+
+        this.rooms=rooms;
+      })
+
+
+      this.placeService.getPlaces().then((places)=> {
+
+        this.places=places;
+      })
+
+      this.accomodationTypeService.getTypes().then((types)=> {
+
+        this.types=types;
+      })
+
+      this.userService.getUsers().then((users)=> {
+
+        this.users=users;
       })
   }
+    
+  
+  
+    AddAccomodation(acc: Accomodation, form: NgForm) {
 
+    var placeElement = Number.parseInt((<HTMLInputElement>document.getElementById("placeDropDown")).value);
+    acc.Place = this.places[placeElement - 1];
+
+    var ownerElement = Number.parseInt((<HTMLInputElement>document.getElementById("ownerDropDown")).value);
+    acc.Owner = this.users[ownerElement - 1];
+
+    this.accomodationService.postAccomodation(acc).then(accomondation => {
+      acc = accomondation; 
+     alert("Accomodation sucessfuly added.");
+      })
+        .catch(error => this.error = error);
+  }
 }
+
