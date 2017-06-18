@@ -106,5 +106,9 @@ export class AccomodationComponent implements OnInit {
        })
         .catch(error => this.error = error);
  }
+
+ GoToRooms() {
+     this.router.navigate(['/rooms'])
+ }
 }
 

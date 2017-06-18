@@ -13,13 +13,17 @@ import { AccomodationService } from './services/accomodation.service';
 import { RoomsService } from './services/room.service';
 import { AccomodationTypeService } from './services/accomodationType.service';
 import { PlaceService } from './services/place.service';
+import { RoomsComponent } from './roomsComponent/rooms.component';
+
 const Routes = [
-  { path: 'accomodations', component: AccomodationComponent }
+  { path: 'accomodations', component: AccomodationComponent },
+  { path: 'rooms', component: RoomsComponent }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
+    RoomsComponent,
     AccomodationComponent
   ],
 

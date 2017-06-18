@@ -1,0 +1,69 @@
+<h2>Available rooms</h2>
+ <table class="Room" style="height: 21px;" width="427" border="1">
+  <tbody>
+  <tr *ngFor="let room of rooms">
+   
+  <td style="text-align:center;">{{room.RoomNumber}}</td>
+  <!-- Name -->
+  <td style="text-align:center;">{{room.Description}}</td>
+ 
+  <td style="text-align:center;">{{room.Id}}</td>
+  <td style="text-align:center;">{{room.BedCount}}</td>
+ 
+  <td style="text-align:center;">{{room.PricePerNight}}</td>
+  
+<!-- Approve  --></tr>
+</tbody>
+</table>
+
+<h4> Create room </h4>
+
+<form #f = "ngForm" (ngSubmit)="addRoom(f.value, f)" enctype="multipart/form-data">
+    <label for="RoomNumber"> RoomNumber: </label>
+    <input type="text" id="RoomNumber" name="RoomNumber" [(ngModel)]="RoomNumber"> <br/>
+    <label for="Description"> Description: </label>
+    <input type="text" id="Description" name="Description" [(ngModel)]="Description"> <br/>
+    <label for="BedCount"> BedCount: </label>
+    <input type="text" id="BedCount" name="BedCount" [(ngModel)]="BedCount"> <br/>
+    <label for="PricePerNight"> PricePerNight: </label>
+    <input type="text" id="PricePerNight" name="PricePerNight" [(ngModel)]="PricePerNight"> <br/>
+    <label for="Accomodation"> Accomodation: </label>
+    <select md-select class="md-no-underline" name="Accomodation" id="Accomodation" required [(ngModel)]="Accomodation">
+      <option md-option *ngFor = "let acc of accomodations" value={{acc.name}}> {{acc.Name}} </option>
+    </select> <br/>
+
+    
+
+    <input type="submit" value="Create"> 
+    
+</form>
+
+<h4> Edit room </h4>
+
+<form #f1 = "ngForm" (ngSubmit)="editRoom(f1.value, f1)" enctype="multipart/form-data">
+    <label for="Id"> Id: </label>
+    <input type="text" id="Id" name="Id" [(ngModel)]="Id"> <br/>
+    <label for="RoomNumber"> RoomNumber: </label>
+    <input type="text" id="RoomNumber" name="RoomNumber" [(ngModel)]="RoomNumber"> <br/>
+    <label for="Description"> Description: </label>
+    <input type="text" id="Description" name="Description" [(ngModel)]="Description"> <br/>
+    <label for="BedCount"> BedCount: </label>
+    <input type="text" id="BedCount" name="BedCount" [(ngModel)]="BedCount"> <br/>
+    <label for="PricePerNight"> PricePerNight: </label>
+    <input type="text" id="PricePerNight" name="PricePerNight" [(ngModel)]="PricePerNight"> <br/>
+    <label for="Accomodation"> Accomodation: </label>
+    <select md-select class="md-no-underline" name="Accomodation" id="Accomodation" required [(ngModel)]="Accomodation">
+      <option md-option *ngFor = "let acc of accomodations" value={{acc.name}}> {{acc.Name}} </option>
+    </select> <br/>
+
+    
+
+    <input type="submit" value="Edit"> 
+    
+</form>
+
+<body>
+<label for="Id"> Id: </label>
+    <input type="text" id="roomId" name="roomId"> <br/>
+    <button (click)="deleteRoom()">Delete</button>
+</body>

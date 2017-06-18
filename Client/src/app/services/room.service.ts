@@ -49,12 +49,12 @@ export class RoomsService {
     
   }
 
-  deleteRoom(room: Room): Promise<Room> {
+  deleteRoom(Id: number): Promise<Room> {
     const headers = new Headers({
       'Content-Type': 'application/json'
     });
 
-    let url = `${this.roomsUrl}/${room.Id}`;
+    let url = `${this.roomsUrl}/${Id}`;
     return this.http
       .delete(url, { headers: headers })
       .toPromise()
