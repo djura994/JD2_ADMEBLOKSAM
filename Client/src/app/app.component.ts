@@ -7,7 +7,6 @@ import {Login} from './models/logIn.model';
 import {NgForm} from '@angular/forms';
 
 import {
-
 Router,
 ActivatedRoute
 }
@@ -22,4 +21,18 @@ from '@angular/router';
 })
 export class AppComponent {
   title = 'Login';
+
+  constructor(private loginService: LogInService, private authService: AuthService, private router: Router, private activatedRoute: ActivatedRoute){
+    activatedRoute.params.subscribe();
+  }
+
+  login(loginParam: Login, form: NgForm) {
+      this.loginService.login(loginParam).then( response => {
+        this.authService.logIn();
+      })
+      .catch(error => {
+        alert
+        ("User not found!")
+      })
+  }
 }

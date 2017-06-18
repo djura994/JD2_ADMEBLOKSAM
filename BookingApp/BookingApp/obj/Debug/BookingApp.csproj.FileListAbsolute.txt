@@ -198,8 +198,6 @@ C:\Users\student\Desktop\JD2_ADMEBLOKSAM\BookingApp\BookingApp\bin\System.Web.Ht
 C:\Users\student\Desktop\JD2_ADMEBLOKSAM\BookingApp\BookingApp\obj\Debug\BookingApp.csprojResolveAssemblyReference.cache
 C:\Users\student\Desktop\JD2_ADMEBLOKSAM\BookingApp\BookingApp\obj\Debug\BookingApp.dll
 C:\Users\student\Desktop\JD2_ADMEBLOKSAM\BookingApp\BookingApp\obj\Debug\BookingApp.pdb
-C:\Users\student\Desktop\JD2_ADMEBLOKSAM\BookingApp\BookingApp\obj\Debug\BookingApp.Migrations.Initial.resources
-C:\Users\student\Desktop\JD2_ADMEBLOKSAM\BookingApp\BookingApp\obj\Debug\BookingApp.csproj.GenerateResource.Cache
 C:\Users\student\Desktop\JD2_ADMEBLOKSAM\BookingApp\BookingApp\bin\Microsoft.Data.Edm.dll
 C:\Users\student\Desktop\JD2_ADMEBLOKSAM\BookingApp\BookingApp\bin\Microsoft.Data.OData.dll
 C:\Users\student\Desktop\JD2_ADMEBLOKSAM\BookingApp\BookingApp\bin\System.Spatial.dll
@@ -235,3 +233,5 @@ C:\Users\student\Desktop\JD2_ADMEBLOKSAM\BookingApp\BookingApp\bin\ko\System.Spa
 C:\Users\student\Desktop\JD2_ADMEBLOKSAM\BookingApp\BookingApp\bin\ru\System.Spatial.resources.dll
 C:\Users\student\Desktop\JD2_ADMEBLOKSAM\BookingApp\BookingApp\bin\zh-Hans\System.Spatial.resources.dll
 C:\Users\student\Desktop\JD2_ADMEBLOKSAM\BookingApp\BookingApp\bin\zh-Hant\System.Spatial.resources.dll
+C:\Users\student\Desktop\JD2_ADMEBLOKSAM\BookingApp\BookingApp\obj\Debug\BookingApp.Migrations.Initial.resources
+C:\Users\student\Desktop\JD2_ADMEBLOKSAM\BookingApp\BookingApp\obj\Debug\BookingApp.csproj.GenerateResource.Cache

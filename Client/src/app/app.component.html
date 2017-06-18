@@ -2,10 +2,10 @@
 <div class="login-page">
   <div class="form">
     
-    <form class="login-form" align="center">
-      <input type="text" placeholder="username"/>
-      <input type="password" placeholder="password"/>
-      <button>login</button>
+    <form class="login-form" align="center" #f="ngForm" (ngSubmit)="login(f.value,f)">
+      <input type="text" placeholder="username" name="username" [(ngModel)]="uname"/>
+      <input type="password" placeholder="password" name="password" [(ngModel)]="pass"/>
+      <input title="login" type="submit" />
       
     </form>
   </div>

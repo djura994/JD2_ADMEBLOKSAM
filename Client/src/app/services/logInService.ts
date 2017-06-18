@@ -21,6 +21,7 @@ export class LogInService {
       var body = "username="+login.username+"&password="+login.password+"&grant_type=password";
       var options = new RequestOptions();
       let hd = new Headers();
+      
       hd.append("Content-Type", "application/x-www-form-urlencoded");
       options.headers = hd;
 
@@ -28,8 +29,7 @@ export class LogInService {
           body, 
           options)
           .toPromise()
-          .then(data => {
-            debugger
+          .then(data => {       
              localStorage.setItem("token", data.json().access_token);
              localStorage.setItem("username", login.username);
              return this.getUser(login.username , data.json().access_token)    
@@ -37,7 +37,7 @@ export class LogInService {
           .catch(this.handleError);
   }
   getUser(username : string, token: String): Promise<User> {
-    return this.http.get(this.usersUrl+"?$filter=id eq "+username)
+    return this.http.get(this.usersUrl+"?$filter=Username eq "+"'"+username+"'")
       .toPromise()
       .then(response => {
         debugger
