@@ -50,12 +50,12 @@ export class AccomodationService {
     
   }
 
-  deleteAccomodation(accomodation: Accomodation): Promise<Accomodation> {
+  deleteAccomodation(Id: number): Promise<Accomodation> {
     const headers = new Headers({
       'Content-Type': 'application/json'
     });
 
-    let url = `${this.accomodationUrl}/${accomodation.Id}`;
+    let url = `${this.accomodationUrl}/${Id}`;
     return this.http
       .delete(url, { headers: headers })
       .toPromise()

@@ -95,5 +95,16 @@ export class AccomodationComponent implements OnInit {
        })
         .catch(error => this.error = error);
  }
+
+ deleteAccomodation() {
+     console.log("aaaa");
+     
+    var id =  Number.parseInt((<HTMLInputElement>document.getElementById("accomodationId")).value);
+    this.accomodationService.deleteAccomodation(id).then
+    (accomodation => {       
+     alert("Accomodation sucessfuly deleted.");
+       })
+        .catch(error => this.error = error);
+ }
 }
 
