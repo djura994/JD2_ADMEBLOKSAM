@@ -14,11 +14,14 @@ import { RoomsService } from './services/room.service';
 import { AccomodationTypeService } from './services/accomodationType.service';
 import { PlaceService } from './services/place.service';
 import { RoomsComponent } from './roomsComponent/rooms.component';
+import { CommentComponent } from './CommentComponent/comment.component';
+import { CommentService } from './services/comment.service';
 
 const Routes = [
   { path: 'accomodations', component: AccomodationComponent },
   { path: 'rooms', component: RoomsComponent },
-  {path: 'login', component: AppComponent}
+  {path: 'login', component: AppComponent},
+  {path: 'comment', component: CommentComponent }
 
 ];
 
@@ -26,7 +29,8 @@ const Routes = [
   declarations: [
     AppComponent,
     RoomsComponent,
-    AccomodationComponent
+    AccomodationComponent,
+    CommentComponent
   ],
 
   imports: [
@@ -36,7 +40,7 @@ const Routes = [
     RouterModule.forRoot(Routes)
   ],
 
-  providers: [AuthService, LoggedInGuard, UserService, LogInService, AccomodationService,RoomsService, AccomodationTypeService, PlaceService],//!LoggedInGuard also has to be included in providers!
+  providers: [AuthService, LoggedInGuard, UserService, LogInService, AccomodationService,RoomsService, AccomodationTypeService, PlaceService, CommentService],//!LoggedInGuard also has to be included in providers!
   bootstrap: [AppComponent]
 })
 

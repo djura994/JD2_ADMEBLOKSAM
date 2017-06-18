@@ -72,5 +72,9 @@ export class RoomsComponent implements OnInit {
         .catch(error => this.error = error);
  }
 
+ goToComments() {
+     this.router.navigate(['./comment']);
+ }
+
 }
 

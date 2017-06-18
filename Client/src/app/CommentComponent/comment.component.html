@@ -1,0 +1,30 @@
+<h2>All comments</h2>
+ <table class="Comment" style="height: 21px;" width="427" border="1">
+  <tbody>
+  <tr *ngFor="let com of comments">
+   
+  <td style="text-align:center;">{{com.Id}}</td>
+  <!-- Name -->
+  <td style="text-align:center;">{{com.Grade}}</td>
+ 
+  <td style="text-align:center;">{{com.Text}}</td>
+  
+<!-- Approve  --></tr>
+</tbody>
+</table>
+
+<h4> Add comment </h4>
+
+<form #f = "ngForm" (ngSubmit)="addComment(f.value, f)" enctype="multipart/form-data">
+    <label for="Grade"> Grade: </label>
+    <input type="text" id="Grade" name="Grade" [(ngModel)]="Grade"> <br/>
+    <label for="Text"> Text: </label>
+    <input type="text" id="Text" name="Text" [(ngModel)]="Text"> <br/>
+     <label for="Accomodation"> Accomodation: </label>
+    <select md-select class="md-no-underline" name="Accomodation" id="Accomodation" required [(ngModel)]="Accomodation">
+      <option md-option *ngFor = "let acc of accomodations" value={{acc.name}}> {{acc.Name}} </option>
+    </select> <br/>
+
+    <input type="submit" value="Add"> 
+    
+</form>
