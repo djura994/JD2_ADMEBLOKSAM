@@ -29,11 +29,20 @@ export class AppComponent {
   login(loginParam: Login, form: NgForm) {
       this.loginService.login(loginParam).then( response => {
         this.authService.logIn();
+        if (this.authService.isLoggedIn()) {
+          this.router.navigate(['/accomodations']);
+        }
       })
       .catch(error => {
         alert
         ("User not found!")
       })
+      form.reset();
+  }
+
+  LogOut() {
+    this.authService.logOut();
+    this.router.navigate(['/login']);
   }
   
   goToAccomodations() {

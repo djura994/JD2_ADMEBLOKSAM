@@ -7,11 +7,13 @@
     }
 
     logIn(): void {
-        
+
     }
 
     logOut(): void {
         localStorage.removeItem("token");
+        localStorage.removeItem("username");
+        localStorage.removeItem("email");
     }
 
     isLoggedIn(): boolean {

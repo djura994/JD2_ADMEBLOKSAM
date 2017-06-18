@@ -17,7 +17,9 @@ import { RoomsComponent } from './roomsComponent/rooms.component';
 
 const Routes = [
   { path: 'accomodations', component: AccomodationComponent },
-  { path: 'rooms', component: RoomsComponent }
+  { path: 'rooms', component: RoomsComponent },
+  {path: 'login', component: AppComponent}
+
 ];
 
 @NgModule({

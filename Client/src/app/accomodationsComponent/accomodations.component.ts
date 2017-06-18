@@ -60,6 +60,8 @@ export class AccomodationComponent implements OnInit {
         this.users=users;
     
       })
+
+    
   }
     
     AddAccomodation(acc: Accomodation, form: NgForm) {
